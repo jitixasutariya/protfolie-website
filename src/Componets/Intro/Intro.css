@@ -1,4 +1,3 @@
-/* Intro section */
 #intro {
   height: calc(100vh - 4rem);
   width: 100vw;
@@ -7,7 +6,6 @@
   overflow: hidden;
   position: relative;
 }
-
 .selfImg {
   position: absolute;
   top: 8rem;
@@ -15,14 +13,13 @@
   z-index: -1;
   object-fit: cover;
   height: 60vh;
-  padding: 0px 20px 0px 0px;
+  padding: 0px 20px 0px 0px; /* Padding around the text */
   border: 3px solid #73ad21;
-  border-radius: 10em;
+  border-radius: 10em; /* Rounded corners */
 }
 
-/* Intro content */
 .introContent {
-  height: 105vh;
+  height: 100vh;
   width: 100vw;
   padding: 2rem;
   font-size: 3rem;
@@ -31,16 +28,13 @@
   flex-direction: column;
   justify-content: center;
 }
-
 .hello {
   font-size: 1.75rem;
   font-weight: 100;
 }
-
 .introName {
   color: #73ad21;
 }
-
 .introPara {
   margin: 0 0 0.55rem;
   font-size: medium;
@@ -48,121 +42,10 @@
   line-height: 1.55rem;
   letter-spacing: 1px;
 }
-
-/* Icon button */
 .iconBtn {
   background: white;
   margin: 1rem 0;
   padding: 0.75rem 2rem;
   border: 3px solid #73ad21;
-  border-radius: 10em;
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-  #intro {
-    height: auto; /* Adjust height to fit content */
-    padding: 1rem;
-  }
-
-  .selfImg {
-    height: 40vh; /* Adjust height for smaller screens */
-    border-radius: 5em; /* Adjust border radius */
-  }
-
-  .introContent {
-    font-size: 2rem; /* Adjust font size */
-  }
-
-  .hello {
-    font-size: 1.5rem; /* Adjust font size */
-  }
-
-  .introPara {
-    font-size: small; /* Adjust font size */
-  }
-
-  .iconBtn {
-    padding: 0.5rem 1.5rem; /* Adjust padding */
-  }
-}
-
-@media (max-width: 850px) {
-  #intro {
-    padding: 0.5rem;
-  }
-
-  .selfImg {
-    height: 30vh;
-    right: 10vw;
-  }
-
-  .introContent {
-    font-size: 1.5rem;
-  }
-
-  .hello {
-    font-size: 1.25rem;
-  }
-
-  .introPara {
-    font-size: x-small;
-  }
-
-  .iconBtn {
-    padding: 0.5rem 1rem;
-  }
-}
-/* Mobile styles for small screens (e.g., phones in portrait mode) */
-@media (max-width: 360px) {
-  #intro {
-    padding: 0.25rem;
-  }
-
-  .selfImg {
-    height: 20vh;
-  }
-
-  .introContent {
-    font-size: 1.25rem;
-  }
-
-  .hello {
-    font-size: 1rem;
-  }
-
-  .introPara {
-    font-size: xx-small;
-  }
-
-  .iconBtn {
-    padding: 0.5rem 0.75rem;
-  }
-}
-
-/* Additional styles if needed for very large screens */
-@media (min-width: 1200px) {
-  #intro {
-    max-width: 90rem;
-  }
-
-  .selfImg {
-    height: 70vh;
-  }
-
-  .introContent {
-    font-size: 3.5rem;
-  }
-
-  .hello {
-    font-size: 2rem;
-  }
-
-  .introPara {
-    font-size: large;
-  }
-
-  .iconBtn {
-    padding: 0.75rem 2.5rem;
-  }
+  border-radius: 10em; /* Rounded corners */
 }
