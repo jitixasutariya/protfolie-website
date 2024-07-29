@@ -37,8 +37,8 @@ const Intro = () => {
         </span>
         <p className="introPara">
           I am a versatile Full-Stack Developer skilled in building
-          comprehensive web applications with <br />
-          expertise in both front-end and back-end technologies.
+          comprehensive web applications <br /> with expertise in both front-end
+          and back-end technologies.
         </p>
         <IconButton />
 

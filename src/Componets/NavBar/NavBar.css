@@ -1,5 +1,8 @@
+/* Base styles (for larger screens) */
+
+/* Navbar */
 .navbar {
-  height: 5rem;
+  height: 5vh;
   width: 100vw;
   max-width: 75rem;
   margin: 0 auto;
@@ -12,6 +15,7 @@
   z-index: 3;
 }
 
+/* Logo */
 .logo {
   object-fit: cover;
   width: 10rem;
@@ -20,6 +24,8 @@
   padding: 10px;
   border-radius: 2em / 5em;
 }
+
+/* Desktop list items */
 .desktopListItem {
   margin: 1rem;
   font-size: 1.2rem;
@@ -32,32 +38,121 @@
   border-bottom: 3px solid #73ad21;
 }
 
+/* Desktop menu button */
 .desktopMenuBtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #f0f0f0; /* Light grey background */
+  background-color: #f0f0f0;
   border: 3px solid #73ad21;
-  border-radius: 10em; /* Rounded corners */
-  padding: 0px 30px 0px 0px; /* Padding around the text */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 10em;
+  padding: 0px 30px 0px 0px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 .desktopMenuBtn:hover {
-  background-color: #e0e0e0; /* Slightly darker grey on hover */
+  background-color: #e0e0e0;
 }
+
 .desktopImg {
   object-fit: cover;
   width: 1.4rem;
   height: 1.3rem;
   margin: 1rem;
 }
-/* Text style */
+
+/* Desktop menu button text */
 .desktopMenuBtn .text {
-  font-family: Arial, sans-serif; /* Font family */
+  font-family: Arial, sans-serif;
   font-weight: 600;
-  font-size: 16px; /* Font size */
-  color: #333; /* Text color */
+  font-size: 16px;
+  color: #333;
   text-decoration: none;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 3rem 1rem; /* Adjust padding for smaller screens */
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    width: 8rem;
+    height: 6rem;
+  }
+
+  .desktopListItem {
+    margin: 0rem;
+    font-size: 1rem;
+  }
+
+  .desktopMenuBtn .text {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 2rem 1rem; /* Further adjust padding */
+  }
+
+  .logo {
+    width: 6rem;
+    height: 5rem;
+  }
+
+  .desktopListItem {
+    margin: 0.25rem;
+    font-size: 0.9rem;
+  }
+
+  .desktopMenuBtn .text {
+    font-size: 12px;
+  }
+}
+/* Mobile styles for small screens (e.g., phones in portrait mode) */
+@media (max-width: 360px) {
+  .navbar {
+    padding: 1.5rem 0.5rem; /* Further adjust padding for very small screens */
+  }
+
+  .logo {
+    width: 5rem;
+    height: 4rem;
+  }
+
+  .desktopListItem {
+    margin: 0.2rem;
+    font-size: 0.8rem;
+  }
+
+  .desktopMenuBtn .text {
+    font-size: 10px;
+  }
+}
+
+/* Additional styles if needed for very large screens */
+@media (min-width: 1200px) {
+  .navbar {
+    max-width: 90rem; /* Increase max-width for very large screens */
+    padding: 8rem 3rem; /* Increase padding for very large screens */
+  }
+
+  .logo {
+    width: 12rem;
+    height: 9rem;
+  }
+
+  .desktopListItem {
+    margin: 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  .desktopMenuBtn .text {
+    font-size: 18px;
+  }
 }
