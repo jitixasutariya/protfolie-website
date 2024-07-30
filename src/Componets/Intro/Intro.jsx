@@ -42,8 +42,9 @@ const Intro = () => {
         <p className="introPara">
           {/* Brief description of skills and expertise */}
           I am a versatile Full-Stack Developer skilled in building
-          comprehensive web applications <br /> with expertise in both front-end
-          and back-end technologies.
+          comprehensive <br />
+          web applications with expertise in both front-end and back-end
+          technologies.
         </p>
         {/* Render the IconButton component */}
         <IconButton />
