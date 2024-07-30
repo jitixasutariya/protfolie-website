@@ -1,126 +1,112 @@
 /* Container for the introduction section */
 #intro {
-  height: calc(100vh - 4rem);
-  width: 100vw;
-  max-width: 75rem;
-  margin: 0 auto;
-  overflow: hidden;
-  position: relative;
+  height: calc(
+    85vh - 4rem
+  ); /* Height relative to the viewport height minus a fixed margin */
+  width: 100vw; /* Full viewport width */
+  max-width: 80rem; /* Maximum width of the container */
+  margin: 0 auto; /* Center the container horizontally */
+  overflow: hidden; /* Hide overflow to prevent content from spilling out */
+  position: relative; /* Position relative for child elements */
   padding: 1rem; /* Add padding to prevent content from touching the screen edges */
 }
 
 /* Styles for the image of yourself */
 .selfImg {
-  position: absolute;
-  top: 2rem;
-  right: 0;
-  z-index: -1;
-  object-fit: cover;
-  height: 60vh;
-  padding: 0px 20px 0px 0px; /* Padding around the image */
-  border: 3px solid #73ad21;
-  border-radius: 10em; /* Rounded corners */
+  position: absolute; /* Position absolutely within the #intro container */
+  top: 2rem; /* Position the image from the top of the container */
+  right: 0; /* Align the image to the right edge */
+  z-index: -1; /* Place the image behind other content */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+  height: 60vh; /* Set image height to 60% of the viewport height */
+  padding: 0px 20px 0px 0px; /* Padding around the image (right side) */
+  border: 3px solid #73ad21; /* Green border around the image */
+  border-radius: 10em; /* Rounded corners for the image */
 }
 
 /* Container for the introduction content */
 .introContent {
-  height: auto; /* Allow content to expand */
-  width: 100%;
-  padding: 2rem;
-  font-size: 3rem;
-  font-weight: 700;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start; /* Align text to the left */
+  height: auto; /* Allow content to expand with its height */
+  width: 100%; /* Full width of the container */
+  padding: 2rem; /* Padding inside the content container */
+  font-size: 3rem; /* Font size for the content */
+  font-weight: 700; /* Font weight for the content */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack child elements vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: flex-start; /* Align items to the start of the flex container (left) */
 }
 
 /* Style for the greeting text */
 .hello {
-  font-size: 1.75rem;
-  font-weight: 100;
+  font-size: 1.75rem; /* Font size for the greeting */
+  font-weight: 100; /* Light font weight for the greeting */
 }
 
 /* Style for the name text */
 .introName {
-  color: #73ad21;
+  color: #73ad21; /* Green color for the name */
 }
 
 /* Style for the introductory paragraph */
 .introPara {
-  margin: 0 0 0.55rem;
-  font-size: medium;
-  font-weight: 100;
-  line-height: 1.55rem;
-  letter-spacing: 1px;
+  margin: 0 0 0.55rem; /* Bottom margin for spacing */
+  font-size: 1.1rem; /* Font size for the paragraph */
+  font-weight: 100; /* Light font weight for the paragraph */
+  line-height: 1.55rem; /* Line height for readability */
+  letter-spacing: 1px; /* Letter spacing for readability */
 }
 
 /* Style for the icon button */
 .iconBtn {
-  background: white;
-  margin: 1rem 0;
-  padding: 0.75rem 2rem;
-  border: 3px solid #73ad21;
-  border-radius: 10em; /* Rounded corners */
+  background: white; /* White background for the button */
+  margin: 1rem 0; /* Margin around the button */
+  padding: 0.75rem 2rem; /* Padding inside the button */
+  border: 3px solid #73ad21; /* Green border around the button */
+  border-radius: 10em; /* Rounded corners for the button */
 }
-/* General styles for larger screens (default) */
 
-/* Mobile styles */
-@media (max-width: 600px) {
+/* For very small screens, such as phones in portrait mode */
+@media (max-width: 480px) {
   #intro {
-    padding: 0.5rem; /* Reduce padding on mobile */
-  }
-
-  .selfImg {
-    height: 40vh; /* Adjust image height */
-    padding: 0; /* Remove padding */
-    border-width: 2px; /* Thinner border */
+    padding: 0.25rem; /* Reduced padding for small screens */
   }
 
   .introContent {
-    font-size: 1.5rem; /* Smaller font size */
-    padding: 1rem; /* Reduce padding */
+    font-size: 1.25rem; /* Smaller font size for content */
+    padding: 0.5rem; /* Reduced padding for small screens */
   }
 
   .hello {
-    font-size: 1.25rem; /* Adjust font size */
-  }
-
-  .introName {
-    font-size: 1.5rem; /* Adjust font size */
+    font-size: 1rem; /* Smaller font size for the greeting */
   }
 
   .introPara {
-    font-size: 0.9rem; /* Adjust font size */
-    line-height: 1.3rem; /* Adjust line height */
+    font-size: 1.1rem; /* Smaller font size for the paragraph */
   }
 
   .iconBtn {
-    padding: 0.5rem 1.5rem; /* Reduce padding */
-    font-size: 0.9rem; /* Adjust font size */
+    padding: 0.5rem 1rem; /* Reduced padding for small screens */
+    font-size: small; /* Smaller font size for the button */
   }
 }
 
-/* Tablet styles */
-@media (max-width: 900px) {
+/* For medium-sized screens, such as tablets in landscape mode */
+@media (max-width: 768px) {
   .introContent {
-    font-size: 2rem; /* Adjust font size */
-    padding: 1.5rem; /* Reduce padding */
+    font-size: 1.5rem; /* Medium font size for content */
+    padding: 1rem; /* Adjusted padding for medium screens */
   }
 
   .hello {
-    font-size: 1.5rem; /* Adjust font size */
-  }
-
-  .introName {
-    font-size: 1.75rem; /* Adjust font size */
+    font-size: 1.25rem; /* Medium font size for the greeting */
   }
 
   .introPara {
-    font-size: 1rem; /* Adjust font size */
+    font-size: 1.1rem; /* Medium font size for the paragraph */
   }
 
   .iconBtn {
-    padding: 0.75rem 2rem; /* Adjust padding */
+    padding: 0.5rem 1.5rem; /* Adjusted padding for medium screens */
   }
 }

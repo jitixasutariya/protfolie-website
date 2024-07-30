@@ -1,0 +1,172 @@
+/* Main container for the projects section */
+#Projects {
+  min-height: calc(
+    100vh - 4rem
+  ); /* Ensures the section takes at least the full height of the viewport */
+  width: 100%;
+  max-width: 65rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* Style for project titles */
+.projectTitle {
+  margin: 1rem 0;
+  font-size: 2.5rem; /* Adjusted for better mobile readability */
+}
+
+/* Style for project descriptions */
+.projectDesc {
+  font-weight: 300;
+  font-size: 1.2rem;
+  margin: 1rem; /* Reduced margin for better appearance on mobile */
+  max-width: 90%; /* Provides flexibility in layout */
+}
+
+/* Container for project images */
+.projectImgs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 65rem;
+  margin: 1rem 0; /* Adds spacing around the images */
+}
+
+/* Individual project image styling */
+.projectImg {
+  object-fit: cover; /* Ensures images cover the assigned space */
+  border-radius: 1rem; /* Rounds the corners of images */
+  border: 3px solid #73ad21; /* Border color around images */
+  height: 15rem; /* Height adjusted for better mobile fit */
+  width: calc(100% / 2 - 1rem); /* Two images per row by default */
+  margin: 0.5rem;
+  padding: 0.5rem;
+  max-width: 100%;
+}
+
+/* Style for buttons associated with projects */
+.projectBtn {
+  padding: 1rem 3.5rem;
+  border: none;
+  background: white;
+  border-radius: 2rem;
+  font-size: 1rem; /* Adjusted font size for mobile devices */
+  margin: 3rem 0;
+}
+
+/* Media Query for Tablets (768px and below) */
+@media (max-width: 768px) {
+  /* Adjustments for smaller screen sizes */
+  #Projects h2 {
+    font-size: 1.5rem; /* Smaller font size for section title */
+  }
+
+  .projectTitle {
+    font-size: 2rem; /* Smaller font size for project titles */
+  }
+
+  .projectDesc {
+    font-size: 1rem; /* Smaller font size for project descriptions */
+    margin: 1.5rem; /* Adjusted margin for better spacing */
+  }
+
+  /* Adjustments for project images in tablet view */
+  .projectImg {
+    height: 15rem; /* Maintain image height */
+    width: calc(50% - 1rem); /* Two images per row */
+  }
+
+  /* Button adjustments for tablet view */
+  .projectBtn {
+    padding: 1rem 2.5rem; /* Smaller padding for buttons */
+    font-size: 1rem; /* Adjusted font size */
+  }
+}
+
+/* Media Query for Mobile Phones (480px and below) */
+@media (max-width: 480px) {
+  /* Further reductions for smaller screens */
+  #Projects h2 {
+    font-size: 1.2rem; /* Smaller font size for section title */
+  }
+
+  .projectTitle {
+    font-size: 1.5rem; /* Smaller font size for project titles */
+  }
+
+  .projectDesc {
+    font-size: 0.9rem; /* Smaller font size for descriptions */
+    margin: 1rem 0.5rem; /* Reduced margin */
+  }
+
+  /* Full-width images on small screens */
+  .projectImg {
+    height: 12rem; /* Reduced height for better fit */
+    width: 100%; /* Full width for small screens */
+  }
+
+  /* Adjustments for buttons on small screens */
+  .projectBtn {
+    padding: 0.8rem 2rem; /* Smaller padding */
+    font-size: 0.8rem; /* Smaller font size */
+  }
+}
+
+/* Additional Styles for Project Buttons and Containers */
+.projectBtnContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem; /* Margin for spacing */
+}
+
+/* Styles for project buttons with hover effects */
+.projectBtn {
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+/* Button hover effect */
+.projectBtn:hover {
+  background-color: #73ad21; /* Changes background on hover */
+  color: white; /* Changes text color on hover */
+}
+
+/* Media Query for Tablets (768px and below) */
+@media (max-width: 768px) {
+  /* Adjust the layout of buttons for tablet screens */
+  .projectBtnContainer {
+    flex-direction: column; /* Stacks buttons vertically */
+    align-items: center; /* Center alignment */
+  }
+
+  .projectBtn {
+    width: 40%; /* Reduced width */
+    margin: 1rem 0; /* Margin for spacing */
+    padding: 0.8rem 1.5rem; /* Smaller padding */
+    font-size: 1rem; /* Adjusted font size */
+  }
+}
+
+/* Media Query for Mobile Phones (480px and below) */
+@media (max-width: 480px) {
+  /* Further adjustments for small screens */
+  .projectBtnContainer {
+    flex-direction: column; /* Stacks buttons vertically */
+    align-items: center; /* Center alignment */
+    margin-top: 1rem; /* Margin for spacing */
+  }
+
+  .projectBtn {
+    width: 40%; /* Reduced width */
+    padding: 0.6rem 1.2rem; /* Smaller padding */
+    font-size: 0.8rem; /* Smaller font size */
+    margin: 0.5rem 0; /* Margin for spacing */
+  }
+}

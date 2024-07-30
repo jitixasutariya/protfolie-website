@@ -8,18 +8,19 @@ import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
 // IconButton component renders a button with an icon and text
 const IconButton = () => {
   return (
-    <Link>
+    <Link to="contact" smooth={true} duration={500}>
       <button className="iconBtn">
+        {/* FontAwesome icon for the button, with custom styling */}
         <FontAwesomeIcon
           icon={faBriefcase}
           style={{
-            color: "#73ad21",
-            height: "1.2rem",
-            objectFit: "cover",
-            margin: "0 0.65rem",
+            color: "#73ad21", // Icon color
+            height: "1.2rem", // Icon height
+            objectFit: "cover", // Fit the icon properly
+            margin: "0 0.65rem", // Spacing around the icon
           }}
         />
-        {/* The "Hire Me" button text, styled to be bold using inline styles */}
+        {/* Button text, styled to be bold */}
         <span className="hireMe" style={{ fontWeight: "bolder" }}>
           Hire Me
         </span>
@@ -33,14 +34,15 @@ const Intro = () => {
   return (
     <section id="intro">
       <div className="introContent">
+        {/* Greeting text */}
         <span className="hello">Hello,</span>
+        {/* Introduction text with developer's name and role */}
         <span className="introText">
-          {/* Display the developer's name */}
           I'm <span className="introName">Jitixa</span>
           <br /> Full-Stack Developer
         </span>
+        {/* Brief description of skills and expertise */}
         <p className="introPara">
-          {/* Brief description of skills and expertise */}
           I am a versatile Full-Stack Developer skilled in building
           comprehensive <br />
           web applications with expertise in both front-end and back-end
