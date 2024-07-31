@@ -1,147 +1,49 @@
-/* Base styles (applied to all screens) */
-.navbar {
-  background: rgb(30, 30, 30); /* Dark background color for the navbar */
-  height: 5rem; /* Height of the navbar */
-  width: 100vw; /* Full viewport width */
-  max-width: 95rem; /* Maximum width to center the navbar */
-  margin: 0 auto; /* Center the navbar horizontally */
-  padding: 6rem 2rem; /* Padding around the content inside the navbar */
-  display: flex; /* Use flexbox layout */
-  align-items: center; /* Align items vertically in the center */
-  justify-content: space-between; /* Space items evenly with space between */
-  position: sticky; /* Stick the navbar to the top of the viewport */
-  top: 0; /* Stick to the top */
-  z-index: 3; /* Ensure it is above other content */
-}
-
+/* Style for logo image */
 .logo {
-  object-fit: cover; /* Cover the area of the logo */
-  width: 10rem; /* Width of the logo */
-  height: 8rem; /* Height of the logo */
-  border: 3px solid #73ad21; /* Border color and thickness */
-  padding: 10px; /* Padding inside the logo area */
-  border-radius: 2em / 5em; /* Rounded corners for the logo */
+  object-fit: cover; /* Ensures the logo covers the area without stretching */
+  width: 100px; /* Sets the width of the logo */
+  height: auto; /* Maintains the aspect ratio of the logo */
+  border: 3px solid #73ad21; /* Adds a border with color #73ad21 */
+  padding: 10px; /* Adds padding inside the border */
+  border-radius: 2em / 5em; /* Creates a rounded border with elliptical corners */
+  margin: 1rem; /* Adds margin around the logo */
 }
 
-.desktopListItem {
-  margin: 1rem; /* Margin around each list item */
-  font-size: 1.2rem; /* Font size of the list item text */
-  cursor: pointer; /* Pointer cursor on hover */
+/* Style for the navbar toggler button */
+.navbar-toggler {
+  margin: 1rem; /* Adds margin around the toggler button */
 }
 
-.desktopListItem:hover {
-  color: #73ad21; /* Change text color on hover */
-  padding-bottom: 0.5rem; /* Padding at the bottom on hover */
-  border-bottom: 3px solid #73ad21; /* Bottom border on hover */
+/* Style for navigation links */
+.nav-link {
+  margin: 0 0.5rem; /* Adds horizontal margin between links */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth transition for color and border-bottom changes */
 }
 
-.desktopMenuBtn {
-  display: inline-flex; /* Inline-flex to align items */
-  align-items: center; /* Center items vertically */
-  justify-content: center; /* Center items horizontally */
-  background-color: #f0f0f0; /* Background color of the button */
-  border: 3px solid #73ad21; /* Border color and thickness */
-  border-radius: 10em; /* Fully rounded corners */
-  padding: 0 30px; /* Horizontal padding inside the button */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for a subtle 3D effect */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease; /* Smooth transition for background color change */
+/* Hover and active state for navigation links */
+.nav-link:hover,
+.nav-link.active {
+  color: #73ad21 !important; /* Changes text color on hover or active state */
+  border-bottom: 0.3rem solid #73ad21; /* Adds a bottom border with color #73ad21 */
+  padding-bottom: 0.5rem; /* Adds padding at the bottom of the link */
 }
 
-.desktopMenuBtn:hover {
-  background-color: #e0e0e0; /* Background color change on hover */
-}
-
-.desktopImg {
-  object-fit: cover; /* Cover the area of the image */
-  width: 1.4rem; /* Width of the image */
-  height: 1.4rem; /* Height of the image */
-  margin: 1rem; /* Margin around the image */
-}
-
-.desktopMenuBtn .text {
-  font-family: Arial, sans-serif; /* Font family for the button text */
-  font-weight: 600; /* Font weight for the button text */
-  font-size: 16px; /* Font size for the button text */
-  color: #333; /* Text color of the button */
-  text-decoration: none; /* Remove underline from the text */
-}
-
-.social-media-icons {
-  display: flex; /* Use flexbox layout for social media icons */
-  gap: 10px; /* Space between icons */
-}
-
+/* Style for social media icons */
 .social-media-icons a {
-  color: #333; /* Color of the social media icon links */
+  color: #333; /* Sets the default color for social media icons */
   transition: color 0.3s ease; /* Smooth transition for color change */
 }
 
+/* Hover state for social media icons */
 .social-media-icons a:hover {
-  color: #007bff; /* Color change on hover for social media icon links */
+  color: #007bff; /* Changes color on hover */
 }
 
-/* Responsive Styles */
-
-/* Tablets and small screens */
-@media (max-width: 768px) {
-  .navbar {
-    padding: 4rem 1rem; /* Reduce padding for smaller screens */
-    height: auto; /* Allow height to adjust based on content */
-  }
-
-  .logo {
-    width: 8rem; /* Adjust logo size for smaller screens */
-    height: 6rem;
-  }
-
-  .desktopListItem {
-    margin: 0.5rem; /* Adjust margin for smaller screens */
-    font-size: 1rem; /* Adjust font size for smaller screens */
-  }
-
-  .desktopMenuBtn {
-    padding: 0 20px; /* Adjust padding for smaller screens */
-  }
-
-  .desktopImg {
-    width: 1rem; /* Adjust image size for smaller screens */
-    height: 1rem;
-  }
-
-  .desktopMenuBtn .text {
-    font-size: 14px; /* Adjust font size for button text */
-  }
-}
-
-/* Mobile screens */
-@media (max-width: 480px) {
-  .navbar {
-    flex-direction: column; /* Stack items vertically on mobile */
-    align-items: flex-start; /* Align items to the start */
-    padding: 2rem 1rem; /* Reduce padding for mobile screens */
-  }
-
-  .logo {
-    width: 6rem; /* Adjust logo size for mobile screens */
-    height: 4rem;
-  }
-
-  .desktopListItem {
-    margin: 0.5rem 0; /* Adjust margin for mobile screens */
-    font-size: 0.9rem; /* Adjust font size for mobile screens */
-  }
-
-  .desktopMenuBtn {
-    padding: 0 15px; /* Adjust padding for mobile screens */
-  }
-
-  .desktopImg {
-    width: 0.8rem; /* Adjust image size for mobile screens */
-    height: 0.8rem;
-  }
-
-  .desktopMenuBtn .text {
-    font-size: 12px; /* Adjust font size for button text */
-  }
+/* 
+  .nav-item class styling for navigation items.
+  - Sets the font size of navigation items to 1.1rem.
+*/
+.nav-item {
+  font-size: 1.1rem;
 }

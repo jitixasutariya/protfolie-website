@@ -1,0 +1,28 @@
+/* Base styles for the footer */
+.footer {
+  width: 100vw; /* Full viewport width */
+  height: 6rem; /* Fixed height for the footer */
+  display: flex; /* Use flexbox layout */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  font-weight: 300; /* Light font weight */
+  font-size: 1.2rem; /* Base font size */
+  padding: 0 1rem; /* Horizontal padding for spacing */
+}
+
+/* Styles for tablets and smaller screens */
+@media (max-width: 768px) {
+  .footer {
+    height: 5rem; /* Reduced height for smaller screens */
+    font-size: 1rem; /* Smaller font size for better fit */
+  }
+}
+
+/* Styles for mobile phones and very small screens */
+@media (max-width: 480px) {
+  .footer {
+    height: 4rem; /* Further reduced height for very small screens */
+    font-size: 0.9rem; /* Further reduced font size */
+    padding: 0 0.5rem; /* Reduced horizontal padding */
+  }
+}

@@ -1,43 +1,52 @@
 import React from "react";
-import "./NavBar.css"; // Import the CSS file for styling the NavBar
-import logo from "../../assets/logo.jpg"; // Import the logo image for the NavBar
+import "./NavBar.css"; // Import custom CSS for NavBar styling
+import logo from "../../assets/logo.jpg"; // Import logo image
 import { Link } from "react-scroll"; // Import Link from react-scroll for smooth scrolling
+import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
 import {
   FaFacebook,
   FaLinkedinIn,
   FaInstagram,
   FaGithub,
-} from "react-icons/fa"; // Import social media icons
+} from "react-icons/fa"; // Import social media icons from react-icons
 
-// Component for displaying social media icons with links
+// SocialMediaIcons component
 const SocialMediaIcons = () => {
   return (
-    <div className="social-media-icons">
-      {/* Facebook Icon with a link to Facebook */}
+    <div className="d-flex justify-content-center" style={{ margin: "1rem" }}>
+      {/* Facebook Icon */}
       <a
         href="https://www.facebook.com"
         target="_blank"
         rel="noopener noreferrer"
+        className="mx-2"
       >
         <FaFacebook size={30} />
       </a>
-      {/* LinkedIn Icon with a link to LinkedIn */}
+      {/* LinkedIn Icon */}
       <a
         href="https://www.linkedin.com"
         target="_blank"
         rel="noopener noreferrer"
+        className="mx-2"
       >
         <FaLinkedinIn size={30} />
       </a>
-      {/* GitHub Icon with a link to GitHub */}
-      <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+      {/* GitHub Icon */}
+      <a
+        href="https://github.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mx-2"
+      >
         <FaGithub size={30} />
       </a>
-      {/* Instagram Icon with a link to Instagram */}
+      {/* Instagram Icon */}
       <a
         href="https://www.instagram.com"
         target="_blank"
         rel="noopener noreferrer"
+        className="mx-2"
       >
         <FaInstagram size={30} />
       </a>
@@ -45,55 +54,91 @@ const SocialMediaIcons = () => {
   );
 };
 
-// Main NavBar component
+// NavBar component
 const NavBar = () => {
   return (
-    <nav className="navbar">
-      {/* Logo Image - Displays the logo of the website */}
-      <img src={logo} alt="Logo" className="logo" />
-
-      {/* Desktop Menu Links - Navigation links for desktop view */}
-      <div className="desktopMenu">
-        {/* Link to the 'home' section with smooth scrolling */}
-        <Link
-          className="desktopListItem"
-          to="home"
-          smooth={true}
-          duration={500}
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div className="container">
+        {/* Logo and brand link */}
+        <a className="navbar-brand" href="#intro">
+          <img src={logo} alt="Logo" className="logo" />
+        </a>
+        {/* Toggler button for mobile view */}
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
-          Home
-        </Link>
-        {/* Link to the 'aboutus' section with smooth scrolling */}
-        <Link
-          className="desktopListItem"
-          to="aboutus"
-          smooth={true}
-          duration={500}
-        >
-          About Us
-        </Link>
-        {/* Link to the 'portfolio' section with smooth scrolling */}
-        <Link
-          className="desktopListItem"
-          to="portfolio"
-          smooth={true}
-          duration={500}
-        >
-          Portfolio
-        </Link>
-        {/* Link to the 'contactus' section with smooth scrolling */}
-        <Link
-          className="desktopListItem"
-          to="contactus"
-          smooth={true}
-          duration={500}
-        >
-          Contact Us
-        </Link>
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        {/* Navigation links */}
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ml-auto">
+            {/* Home link */}
+            <li className="nav-item">
+              <Link
+                className="nav-link"
+                activeClass="active"
+                to="intro"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={500}
+              >
+                Home
+              </Link>
+            </li>
+            {/* About Us link */}
+            <li className="nav-item">
+              <Link
+                className="nav-link"
+                activeClass="active"
+                to="skills"
+                spy={true}
+                smooth={true}
+                offset={-50}
+                duration={500}
+              >
+                About Us
+              </Link>
+            </li>
+            {/* Portfolio link */}
+            <li className="nav-item">
+              <Link
+                className="nav-link"
+                activeClass="active"
+                to="Projects"
+                spy={true}
+                smooth={true}
+                offset={-50}
+                duration={500}
+              >
+                Portfolio
+              </Link>
+            </li>
+            {/* Contact Us link */}
+            <li className="nav-item">
+              <Link
+                className="nav-link"
+                activeClass="active"
+                to="Contact"
+                spy={true}
+                smooth={true}
+                offset={-50}
+                duration={500}
+              >
+                Contact Us
+              </Link>
+            </li>
+          </ul>
+          {/* Social media icons */}
+          <SocialMediaIcons />
+        </div>
       </div>
-
-      {/* SocialMediaIcons - Component that displays social media icons */}
-      <SocialMediaIcons />
     </nav>
   );
 };

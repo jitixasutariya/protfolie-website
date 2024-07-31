@@ -1,58 +1,58 @@
 import React from "react";
-import "./Intro.css";
 import personImg from "../../assets/img1.png";
 import { Link } from "react-scroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./Intro.css";
 
-// IconButton component renders a button with an icon and text
+// Component for the 'Hire Me' button
 const IconButton = () => {
   return (
     <Link to="contact" smooth={true} duration={500}>
-      <button className="iconBtn">
-        {/* FontAwesome icon for the button, with custom styling */}
+      <button className="btn btn-outline-success d-flex align-items-center">
         <FontAwesomeIcon
           icon={faBriefcase}
-          style={{
-            color: "#73ad21", // Icon color
-            height: "1.2rem", // Icon height
-            objectFit: "cover", // Fit the icon properly
-            margin: "0 0.65rem", // Spacing around the icon
-          }}
+          className="me-2"
+          style={{ height: "1.4rem" }}
         />
-        {/* Button text, styled to be bold */}
-        <span className="hireMe" style={{ fontWeight: "bolder" }}>
-          Hire Me
-        </span>
+        <span className="fw-bold">Hire Me</span>
       </button>
     </Link>
   );
 };
 
-// Intro component represents the introduction section of the webpage
+// Main Intro component
 const Intro = () => {
   return (
-    <section id="intro">
-      <div className="introContent">
-        {/* Greeting text */}
-        <span className="hello">Hello,</span>
-        {/* Introduction text with developer's name and role */}
-        <span className="introText">
-          I'm <span className="introName">Jitixa</span>
-          <br /> Full-Stack Developer
-        </span>
-        {/* Brief description of skills and expertise */}
-        <p className="introPara">
-          I am a versatile Full-Stack Developer skilled in building
-          comprehensive <br />
-          web applications with expertise in both front-end and back-end
-          technologies.
-        </p>
-        {/* Render the IconButton component */}
-        <IconButton />
-
-        {/* Display the developer's image */}
-        <img src={personImg} alt="Jitixa" className="selfImg" />
+    <section id="intro" className="container py-5">
+      <div className="row align-items-center">
+        {/* Left column with text content */}
+        <div className="col-md-6 text-center text-md-start">
+          <div className="introContent">
+            <span className="d-block h4">Hello,</span>
+            <span className="d-block h2">
+              I'm <span className="text-success">Jitixa</span>
+              <br /> Full-Stack Developer
+            </span>
+            <p className="lead my-3">
+              I am a versatile Full-Stack Developer skilled in building
+              comprehensive web applications with expertise in both front-end
+              and back-end technologies.
+            </p>
+            {/* Render the IconButton component */}
+            <IconButton />
+          </div>
+        </div>
+        {/* Right column with image */}
+        <div className="col-md-6 text-center mt-4 mt-md-0">
+          <img
+            src={personImg}
+            alt="Jitixa"
+            className="rounded-circle border border-success img-fluid"
+            style={{ maxWidth: "300px", height: "auto" }}
+          />
+        </div>
       </div>
     </section>
   );
