@@ -1,5 +1,6 @@
 import React from "react";
 import Portfolie1 from "../../assets/portfolio.jpg"; // Import the image asset
+import Jewllery_websiteImg from "../../assets/jewellery-website.png";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
 import "./Projects.css"; // Import custom CSS for the Projects component
 
