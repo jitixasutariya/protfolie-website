@@ -193,9 +193,9 @@ const Projects = () => {
               alt={selectedProject.altText}
               style={{ width: "100%", borderRadius: "10px" }}
             />
-            {selectedProject.link && (
+            {selectedProject.gitLink && (
               <ProjectLink
-                href={selectedProject.link}
+                href={selectedProject.gitLink}
                 target="_blank"
                 rel="noopener noreferrer"
               >

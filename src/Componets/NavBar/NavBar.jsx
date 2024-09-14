@@ -38,7 +38,7 @@ const NavLink = styled(Link)`
   display: inline-block;
   margin: 0 0.75rem;
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   text-decoration: none;
   cursor: pointer;
   transition: color 0.3s ease;
