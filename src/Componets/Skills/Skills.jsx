@@ -1,111 +1,157 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import styled from "styled-components";
 import frontEnd from "../../assets/frontend.png";
 import backEnd from "../../assets/backend.png";
 import integration from "../../assets/integration.png";
 import projectMgt from "../../assets/project_manger.png";
-import "./Skills.css";
+
+// Styled components
+const Section = styled.section`
+  padding: 5rem 10rem; /* Default padding for large screens */
+  background: #f0f4f8;
+
+  @media (max-width: 1200px) {
+    padding: 4rem 5rem; /* Padding for medium-sized screens */
+  }
+
+  @media (max-width: 768px) {
+    padding: 3rem 2rem; /* Padding for small screens */
+  }
+
+  @media (max-width: 480px) {
+    padding: 2rem 1rem; /* Padding for extra-small screens */
+  }
+`;
+
+const Title = styled.h2`
+  font-family: "Roboto", sans-serif;
+  color: #343a40;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+`;
+
+const Description = styled.div`
+  text-align: center;
+  margin-bottom: 3rem;
+
+  p {
+    font-size: 1.25rem;
+    color: #666;
+    margin: 0 auto;
+    max-width: 800px; /* Limit the width of the text block */
+  }
+`;
+
+const SkillCard = styled.div`
+  display: flex;
+  background: #fff;
+  color: #333;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  align-items: center;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(40, 167, 69, 0.5); /* Adjust the color and opacity of the shadow */
+  }
+`;
+
+const SkillImage = styled.img`
+  width: 4rem;
+  height: 4rem;
+  border-radius: 10%;
+  margin-right: 1rem;
+`;
+
+const SkillContent = styled.div`
+  h4 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  p {
+    margin: 0.5rem 0 0;
+    font-size: 1rem;
+  }
+`;
+
+const SkillWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+  gap: 1.5rem; /* Space between skill cards */
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; /* One card per row on small screens */
+  }
+`;
 
 const Skills = () => {
   return (
-    <section id="skills" className="container py-5">
-      {/* Section Title */}
-      <div className="text-center mb-4">
-        <span className="display-4 font-weight-bold">What I Do</span>
-      </div>
+    <Section id="skills">
+      <Title className="display-4 mb-4">What I Do</Title>
 
-      {/* Section Description */}
-      <div className="text-center mb-5">
-        <p className="lead">
+      <Description>
+        <p>
           A full-stack developer designs and builds both the front-end and
           back-end of web applications, handling everything from user interfaces
           to server-side logic and database management.
         </p>
-      </div>
+      </Description>
 
-      {/* Skills Grid */}
-      <div className="row">
-        {/* Front-End Development */}
-        <div className="col-lg-6 mb-4">
-          <div className="d-flex bg-dark text-white p-4 rounded" id="skillsImg">
-            <img
-              src={frontEnd}
-              alt="Front-End Development"
-              className="img-fluid rounded-circle mr-4"
-              style={{ width: "5rem", height: "5rem" }}
-            />
-            <div>
-              <h4>Front-End Development</h4>
-              <p>
-                Design and implement responsive, user-friendly interfaces using
-                HTML, CSS, and JavaScript to create visually appealing and
-                accessible web applications.
-              </p>
-            </div>
-          </div>
-        </div>
+      <SkillWrapper>
+        <SkillCard>
+          <SkillImage src={frontEnd} alt="Front-End Development" />
+          <SkillContent>
+            <h4>Front-End Development</h4>
+            <p>
+              Design and implement responsive, user-friendly interfaces using
+              HTML, CSS, and JavaScript to create visually appealing and
+              accessible web applications.
+            </p>
+          </SkillContent>
+        </SkillCard>
 
-        {/* Back-End Development */}
-        <div className="col-lg-6 mb-4">
-          <div className="d-flex bg-dark text-white p-4 rounded">
-            <img
-              src={backEnd}
-              alt="Back-End Development"
-              className="img-fluid rounded-circle mr-4"
-              style={{ width: "5rem", height: "5rem" }}
-            />
-            <div>
-              <h4>Back-End Development</h4>
-              <p>
-                Develop server-side logic, manage databases, and create APIs to
-                handle data processing, storage, and communication between
-                front-end and back-end.
-              </p>
-            </div>
-          </div>
-        </div>
+        <SkillCard>
+          <SkillImage src={backEnd} alt="Back-End Development" />
+          <SkillContent>
+            <h4>Back-End Development</h4>
+            <p>
+              Develop server-side logic, manage databases, and create APIs to
+              handle data processing, storage, and communication between
+              front-end and back-end.
+            </p>
+          </SkillContent>
+        </SkillCard>
 
-        {/* Full-Stack Integration */}
-        <div className="col-lg-6 mb-4">
-          <div className="d-flex bg-dark text-white p-4 rounded">
-            <img
-              src={integration}
-              alt="Full-Stack Integration"
-              className="img-fluid rounded-circle mr-4"
-              style={{ width: "5rem", height: "5rem" }}
-            />
-            <div>
-              <h4>Full-Stack Integration</h4>
-              <p>
-                Build and integrate complete applications, troubleshoot and
-                debug both front-end and back-end issues, and manage code with
-                version control tools like Git.
-              </p>
-            </div>
-          </div>
-        </div>
+        <SkillCard>
+          <SkillImage src={integration} alt="Full-Stack Integration" />
+          <SkillContent>
+            <h4>Full-Stack Integration</h4>
+            <p>
+              Build and integrate complete applications, troubleshoot and debug
+              both front-end and back-end issues, and manage code with version
+              control tools like Git.
+            </p>
+          </SkillContent>
+        </SkillCard>
 
-        {/* Other Responsibilities */}
-        <div className="col-lg-6 mb-4">
-          <div className="d-flex bg-dark text-white p-4 rounded">
-            <img
-              src={projectMgt}
-              alt="Other Responsibilities"
-              className="img-fluid rounded-circle mr-4"
-              style={{ width: "5rem", height: "5rem" }}
-            />
-            <div>
-              <h4>Other Responsibilities</h4>
-              <p>
-                Collaborate with team members on project management and stay
-                updated with the latest technologies and best practices in
-                development.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        <SkillCard>
+          <SkillImage src={projectMgt} alt="Other Responsibilities" />
+          <SkillContent>
+            <h4>Other Responsibilities</h4>
+            <p>
+              Collaborate with team members on project management and stay
+              updated with the latest technologies and best practices in
+              development.
+            </p>
+          </SkillContent>
+        </SkillCard>
+      </SkillWrapper>
+    </Section>
   );
 };
 
