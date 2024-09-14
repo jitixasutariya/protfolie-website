@@ -3,6 +3,7 @@ import styled from "styled-components";
 import logo from "../../assets/logo.jpg";
 import { Link } from "react-scroll";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 
 // Styled components
@@ -12,16 +13,24 @@ const Navbar = styled.nav`
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 1rem; // Adjusted padding
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+  }
 `;
 
 const Logo = styled.img`
   object-fit: cover;
-  width: 100px;
+  width: 120px;
   height: auto;
   border: 3px solid #73ad21;
   padding: 10px;
   border-radius: 50%;
-  margin: 1rem;
+  margin: 0.5rem;
+  @media (max-width: 768px) {
+    width: 100px;
+    margin: 0.25rem;
+  }
 `;
 
 const NavLink = styled(Link)`
@@ -29,7 +38,7 @@ const NavLink = styled(Link)`
   display: inline-block;
   margin: 0 0.75rem;
   color: #fff;
-  font-size: 1rem;
+  font-size: 1.1rem;
   text-decoration: none;
   cursor: pointer;
   transition: color 0.3s ease;
@@ -62,12 +71,17 @@ const NavLink = styled(Link)`
   &.active::after {
     width: 100%;
   }
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    margin: 0 0.5rem;
+  }
 `;
 
 const NavItem = styled.li`
   display: flex;
   align-items: center;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   padding: 0.5rem 1rem;
   border-radius: 8px;
   transition: background-color 0.3s ease, transform 0.3s ease;
@@ -79,7 +93,7 @@ const NavItem = styled.li`
 
   @media (max-width: 768px) {
     font-size: 1rem;
-    padding: 0.5rem;
+    padding: 0.5rem 0.25rem; // Adjusted padding
   }
 `;
 
@@ -87,15 +101,39 @@ const SocialMediaContainer = styled.div`
   display: flex;
   justify-content: center;
   margin: 1rem;
+  gap: 1rem;
+  @media (max-width: 768px) {
+    margin: 0.5rem;
+    flex-direction: row; // Stack icons vertically on small screens
+    align-items: center;
+  }
 `;
 
 const SocialMediaIcon = styled.a`
   color: #fff;
-  margin: 0 0.5rem;
+  margin: 0.5rem 0; // Margin adjusted for vertical stacking
   transition: color 0.3s ease;
 
   &:hover {
     color: #007bff;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0.5rem; // Adjust margin for vertical stacking on small screens
+  }
+`;
+
+// Toggle Button Styling
+const ToggleButton = styled.button`
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
   }
 `;
 
@@ -120,11 +158,15 @@ const SocialMediaIcons = () => (
 
 const NavBar = () => {
   const [activeSection, setActiveSection] = useState("intro");
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   useEffect(() => {
-    // Set initial active section to "intro"
     setActiveSection("intro");
   }, []);
+
+  const handleToggle = () => {
+    setIsNavOpen(!isNavOpen);
+  };
 
   return (
     <Navbar className="navbar navbar-expand-lg navbar-dark">
@@ -132,18 +174,20 @@ const NavBar = () => {
         <a className="navbar-brand" href="/">
           <Logo src={logo} alt="Logo" />
         </a>
-        <button
+        <ToggleButton
           className="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
+          onClick={handleToggle}
           aria-controls="navbarNav"
-          aria-expanded="false"
+          aria-expanded={isNavOpen}
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        </ToggleButton>
+        <div
+          className={`collapse navbar-collapse ${isNavOpen ? "show" : ""}`}
+          id="navbarNav"
+        >
           <ul className="navbar-nav ml-auto">
             <NavItem className={activeSection === "intro" ? "active" : ""}>
               <NavLink
